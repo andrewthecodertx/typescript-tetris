@@ -2,4 +2,4 @@
 
 ## Typescript Implementation
 
-Use BUN! `bun rund dev`
+Use BUN! `bun run dev`
