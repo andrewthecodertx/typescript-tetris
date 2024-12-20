@@ -24,13 +24,13 @@ const gamearena: number[][] = canvasSpace(20, 10)
 const bullpen: number[][] = canvasSpace(4, 2)
 const colors: (string | null)[] = [
   null,
-  "0, 255, 255",  // I cyan
-  "0, 0, 255",    // J purple
-  "255, 165, 0",  // L orange
-  "255, 255, 0",  // O yellow
-  "0, 128, 0",    // S green
-  "128, 0, 128",  // T purple
-  "255, 0, 0",    // Z red
+  "0,   255,  255", // I cyan
+  "0,   0,    255", // J purple
+  "255, 165,  0",   // L orange
+  "255, 255,  0",   // O yellow
+  "0,   128,  0",   // S green
+  "128, 0,    128", // T purple
+  "255, 0,    0",   // Z red
 ]
 
 const pieceStats: Record<string, number> = {
@@ -70,22 +70,22 @@ function kbcontrols(event: KeyboardEvent): void {
 
 function playercontrols(event: KeyboardEvent): void {
   switch (event.code) {
-    case "ArrowLeft": // Left arrow
-    case "KeyH": // h
+    case "ArrowLeft":
+    case "KeyH":
       shiftShape(-1)
       break
-    case "ArrowRight": // Right arrow
-    case "KeyL": // l
+    case "ArrowRight":
+    case "KeyL":
       shiftShape(1)
       break
-    case "ArrowDown": // Down arrow
-    case "KeyJ": // j
+    case "ArrowDown":
+    case "KeyJ":
       dropShape()
       break
-    case "KeyD": // d: Rotate right
+    case "KeyD":
       rotateShape(1)
       break
-    case "KeyA": // a: Rotate left
+    case "KeyA":
       rotateShape(-1)
       break
   }
@@ -327,7 +327,7 @@ function rotateShape(direction: number): void {
     offset = -(offset + (offset > 0 ? 1 : -1));
 
     if (Math.abs(offset) > gamepiece.matrix![0].length) {
-      gamepiece.matrix = matrix // Revert to the original position
+      gamepiece.matrix = matrix
       return;
     }
   }
